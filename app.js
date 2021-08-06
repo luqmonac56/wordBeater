@@ -6,7 +6,7 @@ const levels = {
     hard: 1
 }
 
-const currentLevel = levels.medium;
+const currentLevel = levels.easy;
 
 let time = currentLevel;
 let score = 0;
@@ -37,8 +37,6 @@ const Second = document.getElementById('second');
         'jokes'
 
     ];
-
-    // console.log('done');
     
 
     //init game
@@ -78,7 +76,7 @@ const Second = document.getElementById('second');
 
     // match currentWord to input
     function matchWords() {
-        if (wordInput.value === currentWord.innerHTML) {
+        if (wordInput.value.toLowerCase() === currentWord.innerHTML.toLowerCase()) {
             message.innerHTML = 'Correct';
             return true;
         } else{
@@ -88,7 +86,6 @@ const Second = document.getElementById('second');
     }
 
     function showWord(words) {
-        // console.log('new');
         const randomIndex = Math.floor(Math.random()* words.length);
         currentWord.innerHTML = words[randomIndex];
     }
